@@ -15,6 +15,9 @@ export const mySchema = z.object({
   date: z.date(),
 });
 
+// 型
+export type MySchema = z.infer<typeof mySchema>;
+
 // 値の形レベルのバリデーション
 export const mySchemaExtended = z.object({
   string: z.string().min(3).max(10).email(),
